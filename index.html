@@ -69,7 +69,18 @@
     <div id='map'></div>
     
     // Geocoder
-    <style>
+   <style>
+#form {
+    position:absolute;
+    top:10px;
+    right:10px;
+    padding:10px;
+    background:#fff;
+    z-index:100;
+}
+#form input {
+    padding:5px;
+    height:20px;
 }
 </style>
 
@@ -81,7 +92,7 @@
 <script>
     mapbox.auto('map', 'examples.map-vyofok3q', function(map) {
         document.getElementById('form').onsubmit = function() {
-            wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/geocode/' +
+            wax.tilejson('http://api.tiles.mapbox.com/mapbox.js/v0.6.7/lri.StaffLocations/geocode' +
             encodeURIComponent(document.getElementById('geolocate').value) + '.json', function(center) {
                 if (center && center.results && center.results.length) {
                     map.zoom(6).center(center.results[0][0]);
