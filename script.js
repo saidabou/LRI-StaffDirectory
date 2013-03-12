@@ -7,7 +7,7 @@ $('#map').mapbox('lri.StaffDirectory', function(map, tilejson) {
     mapbox.share().map(map).add();
 
     // Set title and description from tilejson
-    document.title = "LRI Staff Directory";
+    document.title = title;
     $('h1.map-title').text(tilejson.name);
     $('p.description').text(tilejson.description);
 
