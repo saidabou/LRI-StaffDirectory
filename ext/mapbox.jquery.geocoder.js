@@ -12,7 +12,7 @@
         $this.addClass('loading');
 
         reqwest({
-            url: 'https://tiles.mapbox.com/lri/edit/StaffDirectory#7.00/34.758/34.502' + query,
+            url: 'http://open.mapquestapi.com/nominatim/v1/search?format=json&json_callback=callback&&limit=1&q=' + query,
             type: 'jsonp',
             jsonpCallback: 'callback',
             jsonpCallbackName: 'callback',
