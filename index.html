@@ -33,8 +33,8 @@
           </div>
         </div>
         
-        // Cutom Markers
-    	<div id='map'></div>
+       
+        <div id='map'></div>
 <script>
     // GeoJSON input features
     // The image and url properties of the features will be used in
@@ -50,7 +50,7 @@
 
     // Create map
     var map = mapbox.map('map');
-    map.addLayer(mapbox.layer().id('lri.StaffLocations'));
+    map.addLayer(mapbox.layer().id('lri.StaffDirectory'));
 
     // Create and add marker layer
     var markerLayer = mapbox.markers.layer().features(features);
@@ -61,7 +61,7 @@
     // Provide a function that returns html to be used in tooltip
     interaction.formatter(function(feature) {
         var o = '<a target="_blank" href="' + feature.properties.url + '">' +
-            '<img src="' + feature.properties.image + '">' +
+            '<img srct="' + feature.properties.image + '">' +
             '<h2>' + feature.properties.city + '</h2>' +
             '</a>';
 
@@ -71,12 +71,13 @@
     // Set iniital center and zoom
     map.centerzoom({
         lat: 33.890386,
-        lon: 35.663043 }, 7);
+        lon: 35.663043
+    }, 7);
 
     // Attribute map
     map.ui.attribution.add()
         .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
-</script.
+</script>
 
         <!-- geocoder -->
         <div data-control='geocode' data-map="map" class="clearfix section" id="search">
