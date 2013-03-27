@@ -31,6 +31,9 @@
     var markerLayer = mapbox.markers.layer().features(features);
     var interaction = mapbox.markers.interaction(markerLayer);
     map.addLayer(markerLayer);
+    
+    // get the geographical location of the top-left corner of the map
+    var top_left = map.pointLocation({ x: 0, y: 0});
 
     // Set a custom formatter for tooltips
     // Provide a function that returns html to be used in tooltip
